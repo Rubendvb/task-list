@@ -1,0 +1,17 @@
+.todoList {
+  list-style: none;
+}
+
+.todoList li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.todoList li:last-child {
+  border-bottom: none;
+}
+
+.todoList li span {
+  margin-right: 10px;
+}

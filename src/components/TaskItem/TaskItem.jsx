@@ -6,8 +6,6 @@ export default function TaskItem({ task, handleToggle, handleDelete }) {
       <span
         style={{
           textDecoration: task.completed ? 'line-through' : 'none',
-          margin: '0 1rem',
-          cursor: 'pointer',
         }}
         onClick={handleToggle}
       >
@@ -20,7 +18,7 @@ export default function TaskItem({ task, handleToggle, handleDelete }) {
 }
 
 TaskItem.propTypes = {
-  task: PropTypes.string.isRequired,
+  task: PropTypes.object.isRequired,
   handleToggle: PropTypes.func.isRequired,
   handleDelete: PropTypes.func.isRequired,
 }

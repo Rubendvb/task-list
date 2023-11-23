@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 
+import './TaskInput.css'
+
 export default function TaskInput({ addTask }) {
   const [task, setTask] = useState('')
 
@@ -19,7 +21,7 @@ export default function TaskInput({ addTask }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="todoInput">
       <input
         type="text"
         value={task}

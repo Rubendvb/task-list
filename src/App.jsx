@@ -6,6 +6,8 @@ import TaskList from './components/TaskList/TaskList'
 import TaskCounter from './components/TaskCounter/TaskCounter'
 import TodoList from './components/TodoList/TodoList'
 
+import './App.css'
+
 function App() {
   // const [tasks, setTasks] = useState([])
   const [tasks, setTasks] = useState(
@@ -51,7 +53,7 @@ function App() {
   })
 
   return (
-    <>
+    <div className="App">
       <Header />
 
       <TaskInput addTask={addTask} />
@@ -75,7 +77,7 @@ function App() {
         handleToggle={handleToggle}
         handleDelete={handleDelete}
       />
-    </>
+    </div>
   )
 }
 

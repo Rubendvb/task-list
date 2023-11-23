@@ -2,9 +2,11 @@ import PropTypes from 'prop-types'
 
 import TaskItem from '../TaskItem/TaskItem'
 
+import './TaskList.css'
+
 export default function TaskList({ tasks, handleToggle, handleDelete }) {
   return (
-    <ul>
+    <ul className="todoList">
       {tasks.map((task) => (
         <TaskItem
           key={task.id}
