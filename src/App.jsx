@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Header from './components/Header/Header'
 import TaskInput from './components/TaskInput/TaskInput'
@@ -6,7 +6,10 @@ import TaskList from './components/TaskList/TaskList'
 import TaskCounter from './components/TaskCounter/TaskCounter'
 
 function App() {
-  const [tasks, setTasks] = useState([])
+  // const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem('allTasks')) || []
+  )
 
   const addTask = (text) => {
     setTasks([...tasks, { id: Date.now(), text, completed: false }])
@@ -23,6 +26,10 @@ function App() {
   const handleDelete = (id) => {
     setTasks(tasks.filter((task) => task.id !== id))
   }
+
+  useEffect(() => {
+    localStorage.setItem('allTasks', JSON.stringify(tasks))
+  }, [tasks, setTasks])
 
   return (
     <>
